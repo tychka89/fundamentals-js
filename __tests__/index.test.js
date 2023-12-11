@@ -1,29 +1,35 @@
 import test from 'node:test';
 import assert from 'assert/strict';
 
-import { isEven, findMax, reverseString, changeCase, isDivisible } from '../index.js'
+import { concatStrings, isString, identifySign, reverseWords, wordsCount } from '../index.js'
 
-test('step1', () => {
-    assert.strictEqual(isEven(4), true);
-    assert.strictEqual(isEven(5), false);
+test('concatStrings', () => {
+    assert.strictEqual(concatStrings('Hello, ', 'Hexlet'), 'Hello, Hexlet');
+    assert.strictEqual(concatStrings('You ', 'win'), 'You win');
 });
 
-test('step2', () => {
-    assert.strictEqual(findMax(1, 2, 3), 3);
-    assert.strictEqual(findMax(10, 5, 7), 10);
+test('isString', () => {
+    assert.strictEqual(isString('str'), true);
+    assert.strictEqual(isString(-100), false);
+    assert.strictEqual(isString(undefined), false);
 });
 
-test('step3', () => {
-    assert.strictEqual(reverseString("hello"), "olleh");
-    assert.strictEqual(reverseString("world"), "dlrow");
+test('identifySign', () => {
+    assert.strictEqual(identifySign(0), 'Ноль');
+    assert.strictEqual(identifySign(4), 'Положительное число');
+    assert.strictEqual(identifySign(-6), 'Отрицательное число');
 });
 
-test('step4', () => {
-    assert.strictEqual(changeCase("Hello World"), "hELLO wORLD");
-    assert.strictEqual(changeCase("JavaScript"), "jAVAsCRIPT");
+test('reverseWords', () => {
+    assert.strictEqual(reverseWords('Hexlet Hello'), 'Hello Hexlet');
+    assert.strictEqual(reverseWords('foo bar'), 'bar foo');
+    assert.strictEqual(reverseWords('What`s up!'), 'up! What`s');
+    assert.strictEqual(reverseWords('Hello'), 'Hello');
 });
 
-test('step5', () => {
-    assert.strictEqual(isDivisible(10, 2), true);
-    assert.strictEqual(isDivisible(7, 3), false);
+test('wordsCount', () => {
+    assert.strictEqual(wordsCount('Hexlet Hello'), 2);
+    assert.strictEqual(wordsCount('I love programming'), 3);
+    assert.strictEqual(wordsCount(''), 0);
+    assert.strictEqual(wordsCount('foo'), 1);
 });
