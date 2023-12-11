@@ -1,7 +1,4 @@
-[![Review Assignment Due Date](https://classroom.github.com/assets/deadline-readme-button-24ddc0f5d75046c5622901739e7c5dd533143b0c8e959d652212380cedb1ea36.svg)](https://classroom.github.com/a/t5farTkM)
-Конечно, вот новый список задач в формате Markdown, который вы можете скопировать:
 
----
 
 ### Задание №1: Определение четности числа
 Напишите функцию `isEven()`, которая принимает одно число и возвращает `true`, если число четное, и `false`, если число нечетное.
